@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " i",
+	"ii",
+	"ih"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+	  "ore": "ingotMythril"
+    },
+    "h": {
+      "item": "spartanweaponry:material",
+	  "data": 1
+    }
+  },
+  "result": {
+    "item": "spartancompat:halberd_mythril"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartancompat:halberd_mythril"
+    },
+	{
+		"type" : "mod_exists",
+		"mod": "simpleores"
+	}
+  ]
+}

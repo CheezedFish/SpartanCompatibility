@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i",
+	"p",
+	"h"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+	  "ore": "gemOnyx"
+    },
+    "p": {
+      "item": "spartanweaponry:material",
+	  "data": 1
+    },
+    "h": {
+      "item": "spartanweaponry:material",
+	  "data": 0
+    }
+  },
+  "result": {
+    "item": "spartancompat:lance_onyx"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartancompat:lance_onyx"
+    },
+	{
+		"type" : "mod_exists",
+		"mod": "simpleores"
+	}
+  ]
+}

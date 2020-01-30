@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i",
+	"h"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+	  "ore": "ingotMythril"
+    },
+    "h": {
+      "item": "spartanweaponry:material",
+	  "data": 0
+    }
+  },
+  "result": {
+    "item": "spartancompat:dagger_mythril"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartancompat:dagger_mythril"
+    },
+	{
+		"type" : "mod_exists",
+		"mod": "simpleores"
+	}
+  ]
+}

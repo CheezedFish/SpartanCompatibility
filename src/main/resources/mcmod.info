@@ -1,0 +1,16 @@
+[
+{
+  "modid": "spartancompat",
+  "name": "Spartan Compatability",
+  "description": "Adds compatability for various mods with Spartan Weaponry.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["CheezedFish"],
+  "credits": "ObliviousSpartan for Spartan Weaponry, Skrallexxx for Simple Ores.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

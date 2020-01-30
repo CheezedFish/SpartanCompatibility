@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+	"isi",
+	" h "
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+	  "ore": "ingotMythril"
+    },
+    "h": {
+      "item": "spartanweaponry:material",
+	  "data": 0
+    },
+	"s": {
+      "type": "forge:ore_dict",
+	  "ore": "stickWood"
+	}
+  },
+  "result": {
+    "item": "spartancompat:battleaxe_mythril"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartancompat:battleaxe_mythril"
+    },
+	{
+		"type" : "mod_exists",
+		"mod": "simpleores"
+	}
+  ]
+}

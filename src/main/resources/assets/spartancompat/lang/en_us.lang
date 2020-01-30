@@ -1,0 +1,11 @@
+# Materials
+
+# SimpleOres
+material.spartanweaponry:adamantium=Adamantium
+material.spartanweaponry:mythril=Mythril
+material.spartanweaponry:onyx=Onyx
+
+# Tooltips
+
+tooltip.spartancompat:flame=Flame
+tooltip.spartancompat:flame.desc=Engulfs the target in flames for 5 seconds.

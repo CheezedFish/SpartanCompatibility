@@ -1,0 +1,6 @@
+{
+	"conditions": {
+		"mod_exists": "com.cheezedfish.spartancompat.util.ConditionFactoryModId",
+		"item_exists": "com.oblivioussp.spartanweaponry.util.ConditionFactoryItemExists"
+	}
+}

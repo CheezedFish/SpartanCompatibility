@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "hi"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+	  "ore": "ingotAdamantium"
+    },
+    "h": {
+      "item": "spartanweaponry:material",
+	  "data": 1
+    }
+  },
+  "result": {
+    "item": "spartancompat:javelin_adamantium"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartancompat:javelin_adamantium"
+    },
+	{
+		"type" : "mod_exists",
+		"mod": "simpleores"
+	}
+  ]
+}

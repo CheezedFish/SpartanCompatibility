@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i",
+	"h"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+	  "ore": "gemOnyx"
+    },
+    "h": {
+      "item": "spartanweaponry:material",
+	  "data": 1
+    }
+  },
+  "result": {
+    "item": "spartancompat:spear_onyx"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartancompat:spear_onyx"
+    },
+	{
+		"type" : "mod_exists",
+		"mod": "simpleores"
+	}
+  ]
+}

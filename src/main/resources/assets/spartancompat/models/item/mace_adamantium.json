@@ -1,0 +1,6 @@
+{
+    "parent": "spartanweaponry:item/mace_wood",
+    "textures": {
+        "layer0":"spartancompat:items/mace_adamantium"
+    }
+}
