@@ -12,7 +12,7 @@ public class SpartanCompatability
     public static final String MODID = "spartancompat";
     public static final String NAME = "Spartan Compatability";
     public static final String VERSION = "@VERSION@";
-    public static final String DEPENDENCIES = "required-after:spartanweaponry;after:simpleores";
+    public static final String DEPENDENCIES = "required-after:spartanweaponry@[beta-1.3.0,);after:simpleores";
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)

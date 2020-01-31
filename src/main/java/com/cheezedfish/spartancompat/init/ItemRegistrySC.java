@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import alexndr.api.config.types.ConfigTool;
 import alexndr.plugins.SimpleOres.Settings;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -13,6 +14,11 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import com.cheezedfish.spartancompat.SpartanCompatability;
 import com.cheezedfish.spartancompat.weaponproperty.WeaponCallbackFlame;
+import com.cheezedfish.spartancompat.weaponproperty.WeaponPropertySkyroot;
+import com.cheezedfish.spartancompat.weaponproperty.WeaponPropertyHolystone;
+import com.cheezedfish.spartancompat.weaponproperty.WeaponPropertySC;
+import com.cheezedfish.spartancompat.weaponproperty.WeaponPropertyZanite;
+import com.cheezedfish.spartancompat.weaponproperty.WeaponPropertyZanite;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.client.gui.CreativeTabsSW;
@@ -31,27 +37,10 @@ public class ItemRegistrySC {
 	materialMythril,
 	materialOnyx;
 	
-	public static Item daggerAdamantium, daggerMythril, daggerOnyx,
-	   longswordAdamantium, longswordMythril, longswordOnyx,
-	   halberdAdamantium, halberdMythril, halberdOnyx,
-	   saberAdamantium, saberMythril, saberOnyx,
-	   rapierAdamantium, rapierMythril, rapierOnyx,
-	   greatswordAdamantium, greatswordMythril, greatswordOnyx,
-	   hammerAdamantium, hammerMythril, hammerOnyx,
-	   warhammerAdamantium, warhammerMythril, warhammerOnyx,
-	   spearAdamantium, spearMythril, spearOnyx,
-	   pikeAdamantium, pikeMythril, pikeOnyx,
-	   lanceAdamantium, lanceMythril, lanceOnyx,
-	   longbowAdamantium, longbowMythril, longbowOnyx,
-	   crossbowAdamantium, crossbowMythril, crossbowOnyx,
-	   throwingKnifeAdamantium, throwingKnifeMythril, throwingKnifeOnyx,
-	   throwingAxeAdamantium, throwingAxeMythril, throwingAxeOnyx,
-	   javelinAdamantium, javelinMythril, javelinOnyx,
-	   boomerangAdamantium, boomerangMythril, boomerangOnyx,
-	   battleaxeAdamantium, battleaxeMythril, battleaxeOnyx,
-	   maceAdamantium, maceMythril, maceOnyx,
-	   glaiveAdamantium, glaiveMythril, glaiveOnyx, 
-	   staffAdamantium, staffMythril, staffOnyx;
+	public static ToolMaterialEx materialSkyroot,
+	materialHolystone,
+	materialZanite,
+	materialGravitite;
 	
 	public static ArrayList<Item> weapons = new ArrayList<Item>();			   
 	
@@ -64,6 +53,12 @@ public class ItemRegistrySC {
 			ConfigTool onyx = Settings.onyxTools;
 			materialOnyx = new ToolMaterialEx("onyx", "gemOnyx", 0x0, 0x0, onyx.getHarvestLevel(), onyx.getUses(), onyx.getHarvestSpeed(), onyx.getDamageVsEntity(), onyx.getEnchantability());
 		}
+		if(Loader.isModLoaded("aether_legacy")) {
+			materialSkyroot = new ToolMaterialEx("skyroot", ToolMaterial.WOOD, "plankWood", SpartanCompatability.MODID, ToolMaterial.WOOD.getAttackDamage(), WeaponPropertySC.SkyrootDoubleDrops);
+			materialHolystone = new ToolMaterialEx("holystone", ToolMaterial.STONE, "cobblestone", SpartanCompatability.MODID, ToolMaterial.STONE.getAttackDamage(), WeaponPropertySC.HolystoneAmbrosium);
+			materialZanite = new ToolMaterialEx("zanite", ToolMaterial.IRON, "gemZanite", SpartanCompatability.MODID, ToolMaterial.WOOD.getAttackDamage(), WeaponPropertySC.ZaniteScaling);
+			materialGravitite = new ToolMaterialEx("gravitite", ToolMaterial.DIAMOND, "blockGravitite", SpartanCompatability.MODID, ToolMaterial.DIAMOND.getAttackDamage(), WeaponPropertySC.GravititeLaunching);
+		}
 	}
 	
 	public ItemRegistrySC() {}
@@ -71,6 +66,46 @@ public class ItemRegistrySC {
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> ev) {
 		IForgeRegistry<Item> registry = ev.getRegistry();
+		
+		if(Loader.isModLoaded("simpleores")) {
+			registerSimpleOresItems();
+		}
+		if(Loader.isModLoaded("aether_legacy"))
+		{
+			registerAetherItems();
+		}
+		
+		for(Item weapon : weapons)
+		{
+			registry.register(weapon);
+			SpartanWeaponryAPI.addItemModelToRegistry(weapon);
+		}
+		
+		LogHelper.info("Spartans Compatability Items Registered!");
+	}
+	
+	public static void registerSimpleOresItems() {
+		Item daggerAdamantium, daggerMythril, daggerOnyx,
+		   longswordAdamantium, longswordMythril, longswordOnyx,
+		   halberdAdamantium, halberdMythril, halberdOnyx,
+		   saberAdamantium, saberMythril, saberOnyx,
+		   rapierAdamantium, rapierMythril, rapierOnyx,
+		   greatswordAdamantium, greatswordMythril, greatswordOnyx,
+		   hammerAdamantium, hammerMythril, hammerOnyx,
+		   warhammerAdamantium, warhammerMythril, warhammerOnyx,
+		   spearAdamantium, spearMythril, spearOnyx,
+		   pikeAdamantium, pikeMythril, pikeOnyx,
+		   lanceAdamantium, lanceMythril, lanceOnyx,
+		   longbowAdamantium, longbowMythril, longbowOnyx,
+		   crossbowAdamantium, crossbowMythril, crossbowOnyx,
+		   throwingKnifeAdamantium, throwingKnifeMythril, throwingKnifeOnyx,
+		   throwingAxeAdamantium, throwingAxeMythril, throwingAxeOnyx,
+		   javelinAdamantium, javelinMythril, javelinOnyx,
+		   boomerangAdamantium, boomerangMythril, boomerangOnyx,
+		   battleaxeAdamantium, battleaxeMythril, battleaxeOnyx,
+		   maceAdamantium, maceMythril, maceOnyx,
+		   glaiveAdamantium, glaiveMythril, glaiveOnyx, 
+		   staffAdamantium, staffMythril, staffOnyx;
 
 		daggerAdamantium = SpartanWeaponryAPI.createDagger(materialAdamantium, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
 		daggerMythril = SpartanWeaponryAPI.createDagger(materialMythril, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
@@ -176,14 +211,42 @@ public class ItemRegistrySC {
 		staffMythril = SpartanWeaponryAPI.createQuarterstaff(materialMythril, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
 		staffOnyx = SpartanWeaponryAPI.createQuarterstaff(materialOnyx, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
 		addWeaponsToRegister(staffAdamantium, staffMythril, staffOnyx);
+	}
+
+	public static void registerAetherItems() {
+		Item daggerSkyroot, daggerHolystone, daggerZanite, daggerGravitite,
+		   longswordSkyroot, longswordHolystone, longswordZanite, longswordGravitite,
+		   halberdSkyroot, halberdHolystone, halberdZanite, halberdGravitite,
+		   saberSkyroot, saberHolystone, saberZanite, saberGravitite,
+		   rapierSkyroot, rapierHolystone, rapierZanite, rapierGravitite,
+		   greatswordSkyroot, greatswordHolystone, greatswordZanite, greatswordGravitite,
+		   hammerSkyroot, hammerHolystone, hammerZanite, hammerGravitite,
+		   warhammerSkyroot, warhammerHolystone, warhammerZanite, warhammerGravitite,
+		   spearSkyroot, spearHolystone, spearZanite, spearGravitite,
+		   pikeSkyroot, pikeHolystone, pikeZanite, pikeGravitite,
+		   lanceSkyroot, lanceHolystone, lanceZanite, lanceGravitite,
+		   longbowSkyroot, longbowHolystone, longbowZanite, longbowGravitite,
+		   crossbowSkyroot, crossbowHolystone, crossbowZanite, crossbowGravitite,
+		   throwingKnifeSkyroot, throwingKnifeHolystone, throwingKnifeZanite, throwingKnifeGravitite,
+		   throwingAxeSkyroot, throwingAxeHolystone, throwingAxeZanite, throwingAxeGravitite,
+		   javelinSkyroot, javelinHolystone, javelinZanite, javelinGravitite,
+		   boomerangSkyroot, boomerangHolystone, boomerangZanite, boomerangGravitite,
+		   battleaxeSkyroot, battleaxeHolystone, battleaxeZanite, battleaxeGravitite,
+		   maceSkyroot, maceHolystone, maceZanite, maceGravitite,
+		   glaiveSkyroot, glaiveHolystone, glaiveZanite, glaiveGravitite,
+		   staffSkyroot, staffHolystone, staffZanite, staffGravitite;
+
+		daggerSkyroot = SpartanWeaponryAPI.createDagger(materialSkyroot, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
+		daggerHolystone = SpartanWeaponryAPI.createDagger(materialHolystone, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
+		daggerZanite = SpartanWeaponryAPI.createDagger(materialZanite, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
+		daggerGravitite = SpartanWeaponryAPI.createDagger(materialGravitite, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
+		addWeaponsToRegister(daggerSkyroot, daggerHolystone, daggerZanite, daggerGravitite);
 		
-		for(Item weapon : weapons)
-		{
-			registry.register(weapon);
-			SpartanWeaponryAPI.addItemModelToRegistry(weapon);
-		}
-		
-		LogHelper.info("Spartans Compatability Items Registered!");
+		longswordSkyroot = SpartanWeaponryAPI.createLongsword(materialSkyroot, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
+		longswordHolystone = SpartanWeaponryAPI.createLongsword(materialHolystone, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
+		longswordZanite = SpartanWeaponryAPI.createLongsword(materialZanite, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
+		longswordGravitite = SpartanWeaponryAPI.createLongsword(materialGravitite, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
+		addWeaponsToRegister(daggerSkyroot, daggerHolystone, daggerZanite, daggerGravitite);
 	}
 	
 

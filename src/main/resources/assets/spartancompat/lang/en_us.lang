@@ -4,6 +4,10 @@
 material.spartanweaponry:adamantium=Adamantium
 material.spartanweaponry:mythril=Mythril
 material.spartanweaponry:onyx=Onyx
+material.spartancompat:skyroot=Skyroot
+material.spartancompat:holystone=Holystone
+material.spartancompat:zanite=Zanite
+material.spartancompat:gravitite=Gravitite
 
 # Tooltips
 
