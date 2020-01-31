@@ -1,6 +1,6 @@
 {
     "parent": "spartanweaponry:item/longbow_wood_pulling_0",
     "textures": {
-        "layer0":"spartancompat:items/longbow_onyx_pulling_0"
+        "layer0":"spartancompat:items/simpleores/longbow_onyx_pulling_0"
     }
 }

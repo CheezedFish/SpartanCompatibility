@@ -1,7 +1,7 @@
 {
     "parent": "spartanweaponry:item/crossbow_wood",
     "textures": {
-        "layer0":"spartancompat:items/crossbow_adamantium_standby"
+        "layer0":"spartancompat:items/simpleores/crossbow_adamantium_standby"
     },
     "overrides": [
         {

@@ -1,6 +1,6 @@
 {
     "parent": "spartanweaponry:item/pike_wood",
     "textures": {
-        "layer0":"spartancompat:items/pike_onyx"
+        "layer0":"spartancompat:items/simpleores/pike_onyx"
     }
 }

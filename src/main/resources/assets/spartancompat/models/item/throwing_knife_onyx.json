@@ -1,6 +1,6 @@
 {
     "parent": "spartanweaponry:item/throwing_knife_wood",
     "textures": {
-        "layer0":"spartancompat:items/throwing_knife_onyx"
+        "layer0":"spartancompat:items/simpleores/throwing_knife_onyx"
     }
 }

@@ -1,6 +1,6 @@
 {
     "parent": "spartanweaponry:item/mace_wood",
     "textures": {
-        "layer0":"spartancompat:items/mace_mythril"
+        "layer0":"spartancompat:items/simpleores/mace_mythril"
     }
 }

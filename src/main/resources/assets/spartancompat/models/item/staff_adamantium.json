@@ -1,6 +1,6 @@
 {
     "parent": "spartanweaponry:item/staff",
     "textures": {
-        "layer0":"spartancompat:items/quarterstaff_adamantium"
+        "layer0":"spartancompat:items/simpleores/quarterstaff_adamantium"
     }
 }

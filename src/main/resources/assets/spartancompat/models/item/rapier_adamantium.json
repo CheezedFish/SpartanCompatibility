@@ -1,6 +1,6 @@
 {
     "parent": "spartanweaponry:item/rapier_wood",
     "textures": {
-        "layer0":"spartancompat:items/rapier_adamantium"
+        "layer0":"spartancompat:items/simpleores/rapier_adamantium"
     }
 }

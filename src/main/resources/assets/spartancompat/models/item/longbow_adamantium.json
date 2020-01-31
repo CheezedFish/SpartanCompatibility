@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "spartancompat:items/longbow_adamantium_standby"
+        "layer0": "spartancompat:items/simpleores/longbow_adamantium_standby"
     },
     "display": {
         "thirdperson_righthand": {

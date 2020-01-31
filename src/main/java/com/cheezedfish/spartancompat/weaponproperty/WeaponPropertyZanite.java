@@ -19,7 +19,7 @@ public class WeaponPropertyZanite extends WeaponPropertyWithCallback {
 	@Override
 	public float modifyDamageTaken(ToolMaterialEx material, float baseDamage, DamageSource source, EntityLivingBase attacker, EntityLivingBase victim)
 	{
-		float bonus = getBonus(attacker.getActiveItemStack());
+		float bonus = getBonus(attacker.getHeldItemMainhand());
 		return baseDamage + bonus;
 	}
 	
@@ -27,11 +27,11 @@ public class WeaponPropertyZanite extends WeaponPropertyWithCallback {
 		int currDmg = item.getItemDamage();
 		int maxDmg = item.getMaxDamage();
 		
-		if(currDmg >= maxDmg - 50) { return 7.0f; }
-		else if(currDmg >= maxDmg - 110) { return 6.0f; }
-		else if(currDmg >= maxDmg - 200) { return 5.0f; }
-		else if(currDmg >= maxDmg - 239) { return 4.0f; }
-		else { return 3.0f;}
+		if(currDmg >= maxDmg - 50) { return 4.0f; }
+		else if(currDmg >= maxDmg - 110) { return 3.0f; }
+		else if(currDmg >= maxDmg - 200) { return 2.0f; }
+		else if(currDmg >= maxDmg - 239) { return 1.0f; }
+		else { return 0.0f;}
 	}
 	
 }

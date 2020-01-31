@@ -1,6 +1,6 @@
 {
     "parent":"spartanweaponry:item/battleaxe_wood",
     "textures": {
-        "layer0":"spartancompat:items/battleaxe_adamantium"
+        "layer0":"spartancompat:items/simpleores/battleaxe_adamantium"
     }
 }
