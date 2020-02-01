@@ -102,6 +102,7 @@ public class ItemRegistrySC {
 		   warhammerAdamantium, warhammerMythril, warhammerOnyx,
 		   spearAdamantium, spearMythril, spearOnyx,
 		   pikeAdamantium, pikeMythril, pikeOnyx,
+		   katanaAdamantium, katanaMythril, katanaOnyx,
 		   lanceAdamantium, lanceMythril, lanceOnyx,
 		   longbowAdamantium, longbowMythril, longbowOnyx,
 		   crossbowAdamantium, crossbowMythril, crossbowOnyx,
@@ -163,6 +164,11 @@ public class ItemRegistrySC {
 		pikeMythril = SpartanWeaponryAPI.createPike(materialMythril, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
 		pikeOnyx = SpartanWeaponryAPI.createPike(materialOnyx, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
 		addWeaponsToRegister(pikeAdamantium, pikeMythril, pikeOnyx);
+		
+		katanaAdamantium = SpartanWeaponryAPI.createKatana(materialAdamantium, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
+		katanaMythril = SpartanWeaponryAPI.createKatana(materialMythril, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
+		katanaOnyx = SpartanWeaponryAPI.createKatana(materialOnyx, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
+		addWeaponsToRegister(katanaAdamantium, katanaMythril, katanaOnyx);
         
 		lanceAdamantium = SpartanWeaponryAPI.createLance(materialAdamantium, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
 		lanceMythril = SpartanWeaponryAPI.createLance(materialMythril, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
@@ -231,6 +237,7 @@ public class ItemRegistrySC {
 		   warhammerSkyroot, warhammerHolystone, warhammerZanite, warhammerGravitite,
 		   spearSkyroot, spearHolystone, spearZanite, spearGravitite,
 		   pikeSkyroot, pikeHolystone, pikeZanite, pikeGravitite,
+		   katanaSkyroot, katanaHolystone, katanaZanite, katanaGravitite,
 		   lanceSkyroot, lanceHolystone, lanceZanite, lanceGravitite,
 		   longbowSkyroot, longbowHolystone, longbowZanite, longbowGravitite,
 		   crossbowSkyroot, crossbowHolystone, crossbowZanite, crossbowGravitite,
@@ -302,6 +309,12 @@ public class ItemRegistrySC {
 		pikeZanite = SpartanWeaponryAPI.createPike(materialZanite, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
 		pikeGravitite = SpartanWeaponryAPI.createPike(materialGravitite, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
 		addWeaponsToRegisterAether(pikeSkyroot, pikeHolystone, pikeZanite, pikeGravitite);
+		
+		katanaSkyroot = SpartanWeaponryAPI.createKatana(materialSkyroot, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
+		katanaHolystone = SpartanWeaponryAPI.createKatana(materialHolystone, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
+		katanaZanite = SpartanWeaponryAPI.createKatana(materialZanite, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
+		katanaGravitite = SpartanWeaponryAPI.createKatana(materialGravitite, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
+		addWeaponsToRegisterAether(katanaSkyroot, katanaHolystone, katanaZanite, katanaGravitite);
 		
 		lanceSkyroot = SpartanWeaponryAPI.createLance(materialSkyroot, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);
 		lanceHolystone = SpartanWeaponryAPI.createLance(materialHolystone, SpartanCompatability.MODID, CreativeTabsSW.TAB_SW_MOD);

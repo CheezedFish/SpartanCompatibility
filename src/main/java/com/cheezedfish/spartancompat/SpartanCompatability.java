@@ -1,5 +1,7 @@
 package com.cheezedfish.spartancompat;
 
+import org.apache.logging.log4j.Logger;
+
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -13,10 +15,11 @@ public class SpartanCompatability
     public static final String NAME = "Spartan Compatability";
     public static final String VERSION = "@VERSION@";
     public static final String DEPENDENCIES = "required-after:spartanweaponry@[beta-1.3.0,);after:simpleores";
+    public static Logger logger;
     
     @EventHandler
-    public void preInit(FMLPreInitializationEvent event)
-    {
+    public void preInit(FMLPreInitializationEvent event) {
+    	logger = event.getModLog();
     }
     
     @EventHandler

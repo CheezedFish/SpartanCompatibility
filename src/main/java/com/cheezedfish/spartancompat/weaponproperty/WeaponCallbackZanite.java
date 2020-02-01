@@ -30,7 +30,7 @@ public class WeaponCallbackZanite implements IWeaponCallback {
 	}
 	
 	@Override
-	public float modifyDamageTaken(ToolMaterialEx material, float baseDamage, DamageSource source, EntityLivingBase attacker, EntityLivingBase victim)
+	public float modifyDamageDealt(ToolMaterialEx material, float baseDamage, DamageSource source, EntityLivingBase attacker, EntityLivingBase victim)
 	{
 		float bonus = getBonus(attacker.getHeldItemMainhand());
 		return baseDamage + bonus;
