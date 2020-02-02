@@ -6,6 +6,7 @@ import alexndr.api.config.types.ConfigTool;
 import alexndr.plugins.SimpleOres.Settings;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -15,6 +16,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import com.cheezedfish.spartancompat.SpartanCompatibility;
+import com.cheezedfish.spartancompat.item.ItemSC;
 import com.cheezedfish.spartancompat.weaponproperty.WeaponCallbackGravitite;
 import com.cheezedfish.spartancompat.weaponproperty.WeaponCallbackHolystone;
 import com.cheezedfish.spartancompat.weaponproperty.WeaponCallbackSkyroot;
@@ -26,6 +28,7 @@ import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.client.gui.CreativeTabsSW;
 import com.oblivioussp.spartanweaponry.util.LogHelper;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 
 /**
  * Handles item registration for supported materials
@@ -45,7 +48,8 @@ public class ItemRegistrySC {
 	materialZanite,
 	materialGravitite;
 	
-	public static ArrayList<Item> weapons = new ArrayList<Item>();			   
+	public static ArrayList<Item> weapons = new ArrayList<Item>();	
+	
 	
 	static {
 		if(Loader.isModLoaded("simpleores")) {
@@ -57,10 +61,8 @@ public class ItemRegistrySC {
 			materialOnyx = new ToolMaterialEx("onyx", "gemOnyx", 0x0, 0x0, onyx.getHarvestLevel(), onyx.getUses(), onyx.getHarvestSpeed(), onyx.getDamageVsEntity(), onyx.getEnchantability());
 		}
 		if(Loader.isModLoaded("aether_legacy")) {
-			// Register some ore dict values for repairing
-			OreDictionary.registerOre("plankSkyroot", BlocksAether.skyroot_plank);
-			OreDictionary.registerOre("blockHolystone", BlocksAether.holystone);
-			OreDictionary.registerOre("blockEnchantedGravitite", BlocksAether.enchanted_gravitite);
+			// Initialize some materials for crafting
+			
 			
 			materialSkyroot = new ToolMaterialEx("skyroot", ToolMaterial.WOOD, "plankSkyroot", SpartanCompatibility.MODID, ToolMaterial.WOOD.getAttackDamage(), WeaponPropertySC.SkyrootDoubleDrops);
 			materialHolystone = new ToolMaterialEx("holystone", ToolMaterial.STONE, "blockHolystone", SpartanCompatibility.MODID, ToolMaterial.STONE.getAttackDamage(), WeaponPropertySC.HolystoneAmbrosium);
@@ -80,6 +82,13 @@ public class ItemRegistrySC {
 		}
 		if(Loader.isModLoaded("aether_legacy")) {
 			registerAetherItems();
+			
+			String[] itemsToCreate = new String[] {"handle_skyroot", "pole_skyroot"};
+			for(int i = 0; i < itemsToCreate.length; i++) {
+				ItemSC item = new ItemSC(itemsToCreate[i]);
+				registry.register(item);
+				SpartanWeaponryAPI.addItemModelToRegistry(item);
+			}
 		}
 		
 		for(Item weapon : weapons)

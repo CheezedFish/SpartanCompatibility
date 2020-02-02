@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " i",
+    " i",
+    "ip"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "blockHolystone"
+    },
+    "p": {
+      "item": "spartancompat:pole_skyroot"
+    }
+  },
+  "result": {
+    "item": "spartancompat:glaive_holystone"
+  },
+  "conditions": [
+    {
+      "type": "item_exists",
+      "item": "spartancompat:glaive_holystone"
+    },
+	{
+		"type" : "mod_exists",
+		"mod": "aether_legacy"
+	}
+  ]
+}

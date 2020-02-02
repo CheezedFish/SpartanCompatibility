@@ -1,0 +1,6 @@
+{
+    "parent": "spartanweaponry:item/handle",
+    "textures": {
+        "layer0":"spartancompat:items/aether/handle_skyroot"
+    }
+}

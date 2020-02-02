@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iww",
+    "w  ",
+    "w  "
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+	  "ore": "plankSkyroot"
+    },
+    "w": {
+      "type": "forge:ore_dict",
+	  "ore": "plankSkyroot"
+    }
+  },
+  "result": {
+    "item": "spartancompat:boomerang_skyroot"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartancompat:boomerang_skyroot"
+    },
+	{
+		"type" : "mod_exists",
+		"mod": "aether_legacy"
+	}
+  ]
+}

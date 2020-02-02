@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " ii",
+	" si",
+	"h  "
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+	  "ore": "gemZanite"
+    },
+    "h": {
+      "item": "spartancompat:handle_skyroot"
+    },
+	"s": {
+      "item": "aether_legacy:skyroot_stick"
+	}
+  },
+  "result": {
+    "item": "spartancompat:mace_zanite"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartancompat:mace_skyroot"
+    },
+	{
+		"type" : "mod_exists",
+		"mod": "aether_legacy"
+	}
+  ]
+}

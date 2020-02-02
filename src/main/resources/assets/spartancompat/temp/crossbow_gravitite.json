@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bsi",
+    "sw ",
+    "i h"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "blockEnchantedGravitite"
+    },
+    "h": {
+      "item": "spartancompat:handle_skyroot",
+      "data": 0
+    },
+    "b": {
+      "item": "minecraft:bow"
+    },
+    "s": {
+      "type": "forge:ore_dict",
+      "ore": "string"
+    },
+    "w": {
+      "type": "forge:ore_dict",
+      "ore": "logWood"
+    }
+  },
+  "result": {
+    "item": "spartancompat:crossbow_skyroot"
+  },
+  "conditions": [
+    {
+      "type": "item_exists",
+      "item": "spartancompat:crossbow_skyroot"
+    },
+	{
+		"type" : "mod_exists",
+		"mod": "aether_legacy"
+	}
+  ]
+}

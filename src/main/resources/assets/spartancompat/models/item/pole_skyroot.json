@@ -1,0 +1,6 @@
+{
+    "parent": "spartanweaponry:item/pole",
+    "textures": {
+        "layer0":"spartancompat:items/aether/pole_skyroot"
+    }
+}
