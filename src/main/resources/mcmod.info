@@ -1,7 +1,7 @@
 [
 {
   "modid": "spartancompat",
-  "name": "Spartan Compatability",
+  "name": "Spartan Compatibility",
   "description": "Adds compatability for various mods with Spartan Weaponry.",
   "version": "${version}",
   "mcversion": "${mcversion}",

@@ -3,7 +3,7 @@ package com.cheezedfish.spartancompat.weaponproperty;
 import java.util.List;
 import java.util.Random;
 
-import com.cheezedfish.spartancompat.SpartanCompatability;
+import com.cheezedfish.spartancompat.SpartanCompatibility;
 import com.legacy.aether.items.ItemsAether;
 import com.oblivioussp.spartanweaponry.api.IWeaponCallback;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
@@ -25,10 +25,10 @@ public class WeaponCallbackHolystone implements IWeaponCallback {
 
 	@Override
 	public void onTooltip(ToolMaterialEx arg0, ItemStack arg1, World arg2, List<String> tooltip, ITooltipFlag flag) {
-		tooltip.add(TextFormatting.YELLOW  + StringHelper.translateString("holystone_ambrosium", "tooltip", SpartanCompatability.MODID));
+		tooltip.add(TextFormatting.YELLOW  + StringHelper.translateString("holystone_ambrosium", "tooltip", SpartanCompatibility.MODID));
 		if(GuiScreen.isShiftKeyDown())
 		{
-			tooltip.add(TextFormatting.ITALIC + " " + StringHelper.translateString("holystone_ambrosium.desc", "tooltip", SpartanCompatability.MODID));
+			tooltip.add(TextFormatting.ITALIC + " " + StringHelper.translateString("holystone_ambrosium.desc", "tooltip", SpartanCompatibility.MODID));
 		}
 	}
 	

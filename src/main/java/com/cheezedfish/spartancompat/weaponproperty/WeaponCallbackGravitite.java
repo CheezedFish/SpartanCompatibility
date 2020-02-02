@@ -2,7 +2,7 @@ package com.cheezedfish.spartancompat.weaponproperty;
 
 import java.util.List;
 
-import com.cheezedfish.spartancompat.SpartanCompatability;
+import com.cheezedfish.spartancompat.SpartanCompatibility;
 import com.oblivioussp.spartanweaponry.api.IWeaponCallback;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.util.StringHelper;
@@ -24,10 +24,10 @@ public class WeaponCallbackGravitite implements IWeaponCallback {
 
 	@Override
 	public void onTooltip(ToolMaterialEx arg0, ItemStack arg1, World arg2, List<String> tooltip, ITooltipFlag flag) {
-		tooltip.add(TextFormatting.LIGHT_PURPLE  + StringHelper.translateString("gravitite_launch", "tooltip", SpartanCompatability.MODID));
+		tooltip.add(TextFormatting.LIGHT_PURPLE  + StringHelper.translateString("gravitite_launch", "tooltip", SpartanCompatibility.MODID));
 		if(GuiScreen.isShiftKeyDown())
 		{
-			tooltip.add(TextFormatting.ITALIC + " " + StringHelper.translateString("gravitite_launch.desc", "tooltip", SpartanCompatability.MODID));
+			tooltip.add(TextFormatting.ITALIC + " " + StringHelper.translateString("gravitite_launch.desc", "tooltip", SpartanCompatibility.MODID));
 		}
 	}
 	

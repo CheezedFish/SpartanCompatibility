@@ -1,0 +1,6 @@
+{
+    "parent": "spartanweaponry:item/spear_wood",
+    "textures": {
+        "layer0":"spartancompat:items/aether/spear_zanite"
+    }
+}
