@@ -29,7 +29,7 @@ public class SpartanCompatibilityEventHandler {
 				EntityPlayer player = (EntityPlayer) source.getImmediateSource();
 				Item currentItem = player.inventory.getCurrentItem().getItem();
 				
-				if(currentItem instanceof ItemSwordBase || currentItem instanceof Item) {
+				if(currentItem instanceof ItemSwordBase) {
 					if (((ItemSwordBase) currentItem).getMaterialEx() == ItemRegistrySC.materialSkyroot && !(entity instanceof EntityPlayer) && !(entity instanceof EntityWither) && !(entity instanceof EntityValkyrie)) {
 						for (EntityItem items : event.getDrops()) {
 							ItemStack stack = items.getItem();
