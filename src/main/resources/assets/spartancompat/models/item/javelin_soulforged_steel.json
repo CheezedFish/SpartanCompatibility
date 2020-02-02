@@ -1,0 +1,6 @@
+{
+    "parent": "spartanweaponry:item/javelin_wood",
+    "textures": {
+        "layer0":"spartancompat:items/bwm/javelin_soulforged_steel"
+    }
+}
