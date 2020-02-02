@@ -4,13 +4,16 @@ import org.apache.logging.log4j.Logger;
 
 import com.cheezedfish.spartancompat.event.SpartanCompatibilityEventHandler;
 import com.cheezedfish.spartancompat.proxy.CommonProxy;
+import com.legacy.aether.blocks.BlocksAether;
 
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.oredict.OreDictionary;
 
 @Mod(modid = SpartanCompatibility.MODID, name = SpartanCompatibility.NAME, version = SpartanCompatibility.VERSION, dependencies = SpartanCompatibility.DEPENDENCIES)
 public class SpartanCompatibility
@@ -36,5 +39,14 @@ public class SpartanCompatibility
     }
     
     @EventHandler
-    public void postInit(FMLPostInitializationEvent event) { }
+    public void postInit(FMLPostInitializationEvent event) {
+    	if(Loader.isModLoaded("aether_legacy")) {
+    		
+			// Register ore dict values for some Aether items for repairing
+			OreDictionary.registerOre("plankSkyroot", BlocksAether.skyroot_plank);
+			OreDictionary.registerOre("blockHolystone", BlocksAether.holystone);
+			OreDictionary.registerOre("blockEnchantedGravitite", BlocksAether.enchanted_gravitite);
+
+    	}
+    }
 }

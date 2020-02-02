@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "hwi",
+    "w s",
+    "iss"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "blockEnchantedGravitite"
+    },
+    "h": {
+      "item": "spartancompat:handle_skyroot",
+      "data": 0
+    },
+	"s": {
+      "item": "forge:ore_dict",
+	  "ore": "string"
+	},
+	"s": {
+      "item": "aether_legacy:skyroot_stick",
+	  "data": "0"
+	}
+  },
+  "result": {
+    "item": "spartancompat:longbow_skyroot"
+  },
+  "conditions": [
+    {
+      "type": "item_exists",
+      "item": "spartancompat:longbow_skyroot"
+    },
+	{
+		"type" : "mod_exists",
+		"mod": "aether_legacy"
+	}
+  ]
+}

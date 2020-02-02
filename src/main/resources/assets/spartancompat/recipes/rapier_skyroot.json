@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  i",
+	"ii ",
+	"hi "
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+	  "ore": "plankSkyroot"
+    },
+    "h": {
+      "item": "spartancompat:handle_skyroot"
+    }
+  },
+  "result": {
+    "item": "spartancompat:rapier_skyroot"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartancompat:rapier_skyroot"
+    },
+	{
+		"type" : "mod_exists",
+		"mod": "aether_legacy"
+	}
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i",
+	"p",
+	"h"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+	  "ore": "blockEnchantedGravitite"
+    },
+    "p": {
+      "item": "spartancompat:pole_skyroot"
+    },
+    "h": {
+      "item": "spartancompat:handle_skyroot"
+    }
+  },
+  "result": {
+    "item": "spartancompat:lance_gravitite"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartancompat:lance_gravitite"
+    },
+	{
+		"type" : "mod_exists",
+		"mod": "aether_legacy"
+	}
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  i",
+	" i ",
+	"h  "
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+	  "ore": "gemZanite"
+    },
+    "h": {
+      "item": "spartancompat:handle_skyroot"
+    }
+  },
+  "result": {
+    "item": "spartancompat:katana_zanite"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartancompat:katana_skyroot"
+    },
+	{
+		"type" : "mod_exists",
+		"mod": "aether_legacy"
+	}
+  ]
+}

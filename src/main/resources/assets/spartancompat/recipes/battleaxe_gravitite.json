@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+	"isi",
+	" h "
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+	  "ore": "blockEnchantedGravitite"
+    },
+    "h": {
+      "item": "spartancompat:handle_skyroot"
+    },
+	"s": {
+      "item": "aether_legacy:skyroot_stick"
+	}
+  },
+  "result": {
+    "item": "spartancompat:battleaxe_gravitite"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartancompat:battleaxe_gravitite"
+    },
+	{
+		"type" : "mod_exists",
+		"mod": "aether_legacy"
+	}
+  ]
+}

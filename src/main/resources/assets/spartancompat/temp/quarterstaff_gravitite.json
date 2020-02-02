@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "p",
+    "i"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "blockEnchantedGravitite"
+    },
+    "p": {
+      "item": "spartancompat:skyroot_pole",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spartancompat:staff_skyroot"
+  },
+  "conditions": [
+    {
+      "type": "item_exists",
+      "item": "spartancompat:staff_skyroot"
+    },
+	{
+		"type" : "mod_exists",
+		"mod": "aether_legacy"
+	}
+  ]
+}
