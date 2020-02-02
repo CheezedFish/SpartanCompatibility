@@ -1,0 +1,6 @@
+{
+    "parent": "spartanweaponry:item/staff",
+    "textures": {
+        "layer0":"spartancompat:items/aether/quarterstaff_holystone"
+    }
+}

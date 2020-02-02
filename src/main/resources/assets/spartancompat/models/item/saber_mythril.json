@@ -1,6 +1,6 @@
 {
     "parent": "spartanweaponry:item/saber_wood",
     "textures": {
-        "layer0":"spartancompat:items/saber_mythril"
+        "layer0":"spartancompat:items/simpleores/saber_mythril"
     }
 }

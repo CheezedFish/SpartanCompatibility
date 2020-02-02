@@ -1,0 +1,6 @@
+{
+    "parent": "spartanweaponry:item/crossbow_wood_pulling_0",
+    "textures": {
+        "layer0":"spartancompat:items/aether/crossbow_gravitite_pulling_0"
+    }
+}

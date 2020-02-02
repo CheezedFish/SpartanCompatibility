@@ -1,6 +1,6 @@
 {
     "parent": "spartanweaponry:item/warhammer_wood",
     "textures": {
-        "layer0":"spartancompat:items/warhammer_onyx"
+        "layer0":"spartancompat:items/simpleores/warhammer_onyx"
     }
 }

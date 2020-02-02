@@ -1,6 +1,6 @@
 {
     "parent": "spartanweaponry:item/halberd_wood",
     "textures": {
-        "layer0":"spartancompat:items/halberd_mythril"
+        "layer0":"spartancompat:items/simpleores/halberd_mythril"
     }
 }

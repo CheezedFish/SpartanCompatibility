@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "spartancompat:items/longbow_mythril_standby"
+        "layer0": "spartancompat:items/simpleores/longbow_mythril_standby"
     },
     "display": {
         "thirdperson_righthand": {

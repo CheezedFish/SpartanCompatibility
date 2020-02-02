@@ -1,6 +1,6 @@
 {
     "parent":"spartanweaponry:item/boomerang_wood",
     "textures": {
-        "layer0":"spartancompat:items/boomerang_adamantium"
+        "layer0":"spartancompat:items/simpleores/boomerang_adamantium"
     }
 }

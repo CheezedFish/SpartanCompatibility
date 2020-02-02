@@ -1,6 +1,6 @@
 {
     "parent": "spartanweaponry:item/katana_wood",
     "textures": {
-        "layer0":"spartancompat:items/katana_onyx"
+        "layer0":"spartancompat:items/simpleores/katana_onyx"
     }
 }

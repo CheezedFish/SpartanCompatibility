@@ -1,6 +1,6 @@
 {
     "parent": "spartanweaponry:item/throwing_axe_wood",
     "textures": {
-        "layer0":"spartancompat:items/throwing_axe_onyx"
+        "layer0":"spartancompat:items/simpleores/throwing_axe_onyx"
     }
 }

@@ -1,7 +1,7 @@
 {
     "parent": "spartanweaponry:item/crossbow_wood",
     "textures": {
-        "layer0":"spartancompat:items/crossbow_onyx_standby"
+        "layer0":"spartancompat:items/simpleores/crossbow_onyx_standby"
     },
     "overrides": [
         {

@@ -1,6 +1,6 @@
 {
     "parent": "spartanweaponry:item/longsword_wood",
     "textures": {
-        "layer0":"spartancompat:items/longsword_adamantium"
+        "layer0":"spartancompat:items/simpleores/longsword_adamantium"
     }
 }
