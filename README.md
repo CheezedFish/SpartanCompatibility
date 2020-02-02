@@ -7,5 +7,6 @@
 
 # Planned Support:
 - NetherEx
+- Better With Mods
 
 Don't see a mod on here that you want supported? Request it through the issue tracker!
