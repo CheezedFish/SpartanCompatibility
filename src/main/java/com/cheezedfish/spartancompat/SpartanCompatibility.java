@@ -21,7 +21,7 @@ public class SpartanCompatibility
     public static final String MODID = "spartancompat";
     public static final String NAME = "Spartan Compatability";
     public static final String VERSION = "@VERSION@";
-    public static final String DEPENDENCIES = "required-after:spartanweaponry@[beta-1.3.0,);after:simpleores";
+    public static final String DEPENDENCIES = "required-after:spartanweaponry@[beta-1.3.0,);after:simpleores;after:betterwithmods";
     public static Logger logger;
     
 	@SidedProxy(modId = SpartanCompatibility.MODID, clientSide = "com.cheezedfish.spartancompat.proxy.ClientProxy", serverSide = "com.cheezedfish.spartancompat.proxy.CommonProxy")

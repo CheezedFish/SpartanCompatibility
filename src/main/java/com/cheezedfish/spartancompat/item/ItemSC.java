@@ -1,6 +1,5 @@
 package com.cheezedfish.spartancompat.item;
 
-import com.cheezedfish.spartancompat.SpartanCompatibility;
 import com.oblivioussp.spartanweaponry.client.gui.CreativeTabsSW;
 
 import net.minecraft.item.Item;
