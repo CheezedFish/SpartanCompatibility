@@ -1,0 +1,6 @@
+{
+    "parent": "spartanweaponry:item/mace_wood",
+    "textures": {
+        "layer0":"spartancompat:items/bwm/mace_soulforged_steel"
+    }
+}

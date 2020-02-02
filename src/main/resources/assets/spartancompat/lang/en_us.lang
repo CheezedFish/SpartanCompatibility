@@ -11,6 +11,9 @@ material.spartancompat:holystone=Holystone
 material.spartancompat:zanite=Zanite
 material.spartancompat:gravitite=Gravitite
 
+# BWM
+material.spartancompat:soulforged_steel=Refined
+
 # Items
 
 # Aether Legacy

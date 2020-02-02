@@ -1,0 +1,6 @@
+{
+    "parent": "spartanweaponry:item/throwing_knife_wood",
+    "textures": {
+        "layer0":"spartancompat:items/bwm/throwing_knife_soulforged_steel"
+    }
+}

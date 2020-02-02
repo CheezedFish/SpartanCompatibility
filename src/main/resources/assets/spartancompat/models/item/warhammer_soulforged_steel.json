@@ -1,0 +1,6 @@
+{
+    "parent": "spartanweaponry:item/warhammer_wood",
+    "textures": {
+        "layer0":"spartancompat:items/bwm/warhammer_soulforged_steel"
+    }
+}

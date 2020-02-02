@@ -4,15 +4,20 @@ import java.util.ArrayList;
 
 import alexndr.api.config.types.ConfigTool;
 import alexndr.plugins.SimpleOres.Settings;
+import betterwithmods.common.BWMItems;
+import betterwithmods.common.items.ItemMaterial;
+import betterwithmods.module.gameplay.AnvilRecipes;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
-import net.minecraftforge.client.model.ModelLoader;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import com.cheezedfish.spartancompat.SpartanCompatibility;
@@ -23,12 +28,10 @@ import com.cheezedfish.spartancompat.weaponproperty.WeaponCallbackSkyroot;
 import com.cheezedfish.spartancompat.weaponproperty.WeaponCallbackZanite;
 import com.cheezedfish.spartancompat.weaponproperty.WeaponPropertySC;
 import com.legacy.aether.api.enchantments.AetherEnchantment;
-import com.legacy.aether.blocks.BlocksAether;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.client.gui.CreativeTabsSW;
 import com.oblivioussp.spartanweaponry.util.LogHelper;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 
 /**
  * Handles item registration for supported materials
@@ -48,6 +51,8 @@ public class ItemRegistrySC {
 	materialZanite,
 	materialGravitite;
 	
+	public static ToolMaterialEx materialSoulSteel;
+	
 	public static ArrayList<Item> weapons = new ArrayList<Item>();	
 	
 	
@@ -61,13 +66,13 @@ public class ItemRegistrySC {
 			materialOnyx = new ToolMaterialEx("onyx", "gemOnyx", 0x0, 0x0, onyx.getHarvestLevel(), onyx.getUses(), onyx.getHarvestSpeed(), onyx.getDamageVsEntity(), onyx.getEnchantability());
 		}
 		if(Loader.isModLoaded("aether_legacy")) {
-			// Initialize some materials for crafting
-			
-			
 			materialSkyroot = new ToolMaterialEx("skyroot", ToolMaterial.WOOD, "plankSkyroot", SpartanCompatibility.MODID, ToolMaterial.WOOD.getAttackDamage(), WeaponPropertySC.SkyrootDoubleDrops);
 			materialHolystone = new ToolMaterialEx("holystone", ToolMaterial.STONE, "blockHolystone", SpartanCompatibility.MODID, ToolMaterial.STONE.getAttackDamage(), WeaponPropertySC.HolystoneAmbrosium);
 			materialZanite = new ToolMaterialEx("zanite", ToolMaterial.IRON, "gemZanite", SpartanCompatibility.MODID, ToolMaterial.WOOD.getAttackDamage(), WeaponPropertySC.ZaniteScaling);
 			materialGravitite = new ToolMaterialEx("gravitite", ToolMaterial.DIAMOND, "blockEnchantedGravitite", SpartanCompatibility.MODID, ToolMaterial.DIAMOND.getAttackDamage(), WeaponPropertySC.GravititeLaunching);
+		}
+		if(Loader.isModLoaded("betterwithmods")) {
+			materialSoulSteel = new ToolMaterialEx("soulforged_steel", BWMItems.SOULFORGED_STEEL, "ingotSoulforgedSteel", SpartanCompatibility.MODID, BWMItems.SOULFORGED_STEEL.getAttackDamage());
 		}
 	}
 	
@@ -90,11 +95,18 @@ public class ItemRegistrySC {
 				SpartanWeaponryAPI.addItemModelToRegistry(item);
 			}
 		}
+		if(Loader.isModLoaded("betterwithmods")) {
+			registerBWMItems();
+		}
 		
 		for(Item weapon : weapons)
 		{
 			registry.register(weapon);
 			SpartanWeaponryAPI.addItemModelToRegistry(weapon);
+		}
+		
+		if(Loader.isModLoaded("betterwithmods")) {
+			registerBWMRecipes();
 		}
 		
 		LogHelper.info("Spartans Compatability Items Registered!");
@@ -393,7 +405,119 @@ public class ItemRegistrySC {
 
 	}
 	
+	public static void registerBWMItems() {
+		Item daggerSoulSteel,
+		   longswordSoulSteel,
+		   halberdSoulSteel,
+		   saberSoulSteel,
+		   rapierSoulSteel,
+		   greatswordSoulSteel,
+		   hammerSoulSteel,
+		   warhammerSoulSteel,
+		   spearSoulSteel,
+		   pikeSoulSteel,
+		   katanaSoulSteel,
+		   lanceSoulSteel,
+		   longbowSoulSteel,
+		   crossbowSoulSteel,
+		   throwingKnifeSoulSteel,
+		   throwingAxeSoulSteel,
+		   javelinSoulSteel,
+		   boomerangSoulSteel,
+		   battleaxeSoulSteel,
+		   maceSoulSteel,
+		   glaiveSoulSteel,
+		   staffSoulSteel;
+		
+		daggerSoulSteel = SpartanWeaponryAPI.createDagger(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);	
+		longswordSoulSteel = SpartanWeaponryAPI.createLongsword(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);		
+		halberdSoulSteel = SpartanWeaponryAPI.createHalberd(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);	
+		saberSoulSteel = SpartanWeaponryAPI.createSaber(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);	
+		rapierSoulSteel = SpartanWeaponryAPI.createRapier(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);
+		greatswordSoulSteel = SpartanWeaponryAPI.createGreatsword(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);	
+		hammerSoulSteel = SpartanWeaponryAPI.createHammer(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);
+		warhammerSoulSteel = SpartanWeaponryAPI.createWarhammer(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);
+		spearSoulSteel = SpartanWeaponryAPI.createSpear(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);
+		pikeSoulSteel = SpartanWeaponryAPI.createPike(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);	
+		katanaSoulSteel = SpartanWeaponryAPI.createKatana(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);
+		lanceSoulSteel = SpartanWeaponryAPI.createLance(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);
+		longbowSoulSteel = SpartanWeaponryAPI.createLongbow(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD, null);
+		crossbowSoulSteel = SpartanWeaponryAPI.createCrossbow(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD, null);
+		throwingKnifeSoulSteel = SpartanWeaponryAPI.createThrowingKnife(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);
+		throwingAxeSoulSteel = SpartanWeaponryAPI.createThrowingAxe(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);
+		javelinSoulSteel = SpartanWeaponryAPI.createJavelin(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);	
+		boomerangSoulSteel = SpartanWeaponryAPI.createBoomerang(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);
+		battleaxeSoulSteel = SpartanWeaponryAPI.createBattleaxe(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);
+		maceSoulSteel = SpartanWeaponryAPI.createMace(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);
+		glaiveSoulSteel = SpartanWeaponryAPI.createGlaive(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);
+		staffSoulSteel = SpartanWeaponryAPI.createQuarterstaff(materialSoulSteel, SpartanCompatibility.MODID, CreativeTabsSW.TAB_SW_MOD);
+		
+		addWeaponsToRegister(daggerSoulSteel, longswordSoulSteel, halberdSoulSteel, saberSoulSteel, rapierSoulSteel, greatswordSoulSteel,
+				hammerSoulSteel, warhammerSoulSteel, spearSoulSteel, pikeSoulSteel, katanaSoulSteel, lanceSoulSteel, longbowSoulSteel,
+				crossbowSoulSteel, throwingKnifeSoulSteel, throwingAxeSoulSteel, javelinSoulSteel, boomerangSoulSteel,
+				battleaxeSoulSteel, maceSoulSteel, glaiveSoulSteel, staffSoulSteel);
+	}
+	
+private static void registerRecipeBWM(String itemName, String... crafting) {
+    Item weapon = ForgeRegistries.ITEMS.getValue(new ResourceLocation(SpartanCompatibility.MODID, itemName));
+    if (weapon != null){
+        AnvilRecipes.addSteelShapedRecipe(new ResourceLocation(SpartanCompatibility.MODID, itemName),
+                new ItemStack(weapon), crafting,
+                'X', "ingotSoulforgedSteel",
+                'H', ItemMaterial.getMaterial(ItemMaterial.EnumMaterial.HAFT));
+    }
+}
 
+private static void registerLongbowRecipeBWM(String itemName, String... crafting) {
+    Item weapon = ForgeRegistries.ITEMS.getValue(new ResourceLocation(SpartanCompatibility.MODID, itemName));
+    if (weapon != null){
+        AnvilRecipes.addSteelShapedRecipe(new ResourceLocation(SpartanCompatibility.MODID, itemName),
+                new ItemStack(weapon), crafting,
+                'X', "ingotSoulforgedSteel",
+                'H', ItemMaterial.getMaterial(ItemMaterial.EnumMaterial.HAFT),
+                'S', ItemMaterial.getMaterial(ItemMaterial.EnumMaterial.HEMP_FIBERS));
+    }
+}
+
+private static void registerCrossbowRecipeBWM(String itemName, String... crafting) {
+    Item weapon = ForgeRegistries.ITEMS.getValue(new ResourceLocation(SpartanCompatibility.MODID, itemName));
+    if (weapon != null){
+        AnvilRecipes.addSteelShapedRecipe(new ResourceLocation(SpartanCompatibility.MODID, itemName),
+                new ItemStack(weapon), crafting,
+                'X', "ingotSoulforgedSteel",
+                'H', ItemMaterial.getMaterial(ItemMaterial.EnumMaterial.HAFT),
+                'S', ItemMaterial.getMaterial(ItemMaterial.EnumMaterial.HEMP_FIBERS),
+                'W', "logWood",
+                'B', Items.BOW);
+    }
+}
+	
+private static void registerBWMRecipes() {
+    registerRecipeBWM("dagger_soulforged_steel","X   ", "H   " );
+    registerRecipeBWM("longsword_soulforged_steel", " X  ", " X  ", " X  ", "XHX ");
+    registerRecipeBWM("halberd_soulforged_steel", "  XX", " XH ", " H  ", "X   ");
+    registerRecipeBWM("saber_soulforged_steel", " X  ", " X  ", " X  ", "XH  ");
+    registerRecipeBWM("rapier_soulforged_steel", "   X", "  X ", "XX  ", "HX  ");
+    registerRecipeBWM("greatsword_soulforged_steel", " X  ", "XXX ", "XXX ", "XHX ");
+    registerRecipeBWM("hammer_soulforged_steel", "XXXX", "XXXX", " HH ", " HH ");
+    registerRecipeBWM("warhammer_soulforged_steel", " XXX", " XXX", "  H ", "  H ");
+    registerRecipeBWM("spear_soulforged_steel", "X   ", "X   ", "H   ");
+    registerRecipeBWM("pike_soulforged_steel", " X  ", " X  ", " H  ", " H  ");
+    registerRecipeBWM("katana_soulforged_steel", "   X", "  X ", " X  ", "H   ");
+    registerRecipeBWM("lance_soulforged_steel","   X", "  H ", "XH  ", "HX  ");
+    registerLongbowRecipeBWM("longbow_soulforged_steel", "HWXX", "W  S", "X  S", "XSS ");
+    registerCrossbowRecipeBWM("crossbow_soulforged_steel", "BSXX", "SWWS", "XWHS", "XSSH");
+    registerRecipeBWM("throwing_knife_soulforged_steel", "HX");
+    registerRecipeBWM("throwing_axe_soulforged_steel", "HX  ", " X  ");
+    registerRecipeBWM("javelin_soulforged_steel", "HXX");
+    registerRecipeBWM("boomerang_soulforged_steel", "XHHH", "H   ", "H   ", "H   ");
+    registerRecipeBWM("battleaxe_soulforged_steel","X  X", "XXXX", "XH X", " H  ");
+    registerRecipeBWM("mace_soulforged_steel"," XXX", " XHX", " HXX", "H   ");
+    registerRecipeBWM("glaive_soulforged_steel", "  XX", "X HX", " H  ", "H   ");
+    registerRecipeBWM("quarterstaff_soulforged_steel", "   X", "  H ", " H  ", "X   ");
+}
+	
+	
 protected static void addWeaponsToRegister(Item... weaponsToAdd) {
 	for(Item weapon : weaponsToAdd) {
 		if(weapon != null)

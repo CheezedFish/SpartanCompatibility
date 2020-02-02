@@ -1,0 +1,6 @@
+{
+    "parent": "spartanweaponry:item/saber_wood",
+    "textures": {
+        "layer0":"spartancompat:items/bwm/saber_soulforged_steel"
+    }
+}
