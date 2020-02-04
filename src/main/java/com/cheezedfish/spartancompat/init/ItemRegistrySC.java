@@ -505,7 +505,7 @@ private static void registerBWMRecipes() {
     registerRecipeBWM("pike_soulforged_steel", " X  ", " X  ", " H  ", " H  ");
     registerRecipeBWM("katana_soulforged_steel", "   X", "  X ", " X  ", "H   ");
     registerRecipeBWM("lance_soulforged_steel","   X", "  H ", "XH  ", "HX  ");
-    registerLongbowRecipeBWM("longbow_soulforged_steel", "HWXX", "W  S", "X  S", "XSS ");
+    registerLongbowRecipeBWM("longbow_soulforged_steel", "HHXX", "H  S", "X  S", "XSS ");
     registerCrossbowRecipeBWM("crossbow_soulforged_steel", "BSXX", "SWWS", "XWHS", "XSSH");
     registerRecipeBWM("throwing_knife_soulforged_steel", "HX");
     registerRecipeBWM("throwing_axe_soulforged_steel", "HX  ", " X  ");
