@@ -27,7 +27,7 @@ import com.cheezedfish.spartancompat.weaponproperty.WeaponCallbackHolystone;
 import com.cheezedfish.spartancompat.weaponproperty.WeaponCallbackSkyroot;
 import com.cheezedfish.spartancompat.weaponproperty.WeaponCallbackZanite;
 import com.cheezedfish.spartancompat.weaponproperty.WeaponPropertySC;
-import com.legacy.aether.api.enchantments.AetherEnchantment;
+import com.gildedgames.the_aether.api.enchantments.AetherEnchantment;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.client.gui.CreativeTabsSW;

@@ -1,9 +1,9 @@
 package com.cheezedfish.spartancompat.event;
 
 import com.cheezedfish.spartancompat.init.ItemRegistrySC;
-import com.legacy.aether.entities.bosses.EntityValkyrie;
-import com.legacy.aether.items.ItemsAether;
-import com.legacy.aether.items.dungeon.ItemDungeonKey;
+import com.gildedgames.the_aether.entities.bosses.EntityValkyrie;
+import com.gildedgames.the_aether.items.ItemsAether;
+import com.gildedgames.the_aether.items.dungeon.ItemDungeonKey;
 import com.oblivioussp.spartanweaponry.item.ItemSwordBase;
 
 import net.minecraft.entity.EntityLivingBase;

@@ -4,7 +4,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.cheezedfish.spartancompat.event.SpartanCompatibilityEventHandler;
 import com.cheezedfish.spartancompat.proxy.CommonProxy;
-import com.legacy.aether.blocks.BlocksAether;
+import com.gildedgames.the_aether.blocks.BlocksAether;
 
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -21,7 +21,7 @@ public class SpartanCompatibility
     public static final String MODID = "spartancompat";
     public static final String NAME = "Spartan Compatability";
     public static final String VERSION = "@VERSION@";
-    public static final String DEPENDENCIES = "required-after:spartanweaponry@[beta-1.3.0,);after:simpleores;after:betterwithmods";
+    public static final String DEPENDENCIES = "required-after:spartanweaponry@[beta-1.3.0,);after:simpleores;after:betterwithmods;after:aether_legacy";
     public static Logger logger;
     
 	@SidedProxy(modId = SpartanCompatibility.MODID, clientSide = "com.cheezedfish.spartancompat.proxy.ClientProxy", serverSide = "com.cheezedfish.spartancompat.proxy.CommonProxy")

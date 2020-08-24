@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import com.cheezedfish.spartancompat.SpartanCompatibility;
-import com.legacy.aether.items.ItemsAether;
+import com.gildedgames.the_aether.items.ItemsAether;
 import com.oblivioussp.spartanweaponry.api.IWeaponCallback;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.util.StringHelper;

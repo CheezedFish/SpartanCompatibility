@@ -2,7 +2,7 @@ package com.cheezedfish.spartancompat.weaponproperty;
 
 import java.util.Random;
 
-import com.legacy.aether.items.ItemsAether;
+import com.gildedgames.the_aether.items.ItemsAether;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponPropertyWithCallback;
 
